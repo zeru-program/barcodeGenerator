@@ -50,3 +50,20 @@ body {
   left: -5%;
   transform: rotate(10deg);
 }
+.con-copyright {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  position: fixed;
+  bottom: 1%;
+  left: 2%;
+  z-index: 9999;
+}
+.label-cp {
+  color: #7d7d7d;
+}
+.img-cp {
+  width: 20px;
+  margin: 5px;
+  opacity: .7;
+}

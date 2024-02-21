@@ -13,9 +13,12 @@ function HeadTitle() {
 function BtnStart() {
   return (
     <>
-    <button className="start-btn rounded rounded-3 bg-warning font-weight-bolder">START</button>
+    <button className="start-btn rounded rounded-3 bg-warning font-weight-bolder" onClick={GoBarcode}>START</button>
     </>
     );
+}
+function GoBarcode() {
+  window.location.href = "/home/index.html";
 }
 function DeskPgmLaunge() {
   return (<>
@@ -25,6 +28,20 @@ function DeskPgmLaunge() {
   </div>
   </>)
 }
+function CopyRight() {
+  return (
+    <>
+    <div className="con-copyright">
+    <label className="label-cp">Created by zeru with</label>
+    <div>
+    <img src="react.png" className="img-cp" />
+    <img src="bootstrap.png" className="img-cp" />
+    <img src="js.png" className="img-cp" />
+    </div>
+    </div>
+    </>
+    );
+}
 
 function HomePage() {
   return (
@@ -32,6 +49,7 @@ function HomePage() {
     <HeadTitle />
     <BtnStart />
     <DeskPgmLaunge />
+    <CopyRight />
     </>
     );
 }
