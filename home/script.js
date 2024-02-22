@@ -3,7 +3,9 @@
 var qrcode = new QRCode(document.getElementById("qrcode"), {
 	text : 'https://zeru.netlify.app',
 	width : 145,
-	height : 145
+	height : 145,
+	colorDark : "#000000",
+	colorLight : "#ffffff"
 });
 const defaultQr = "https://zeru.netlify.app";
 
@@ -21,12 +23,15 @@ function MakeCode () {
 	    
 	    labelempty.style.opacity = "0";
 	  elText.style.border = "2px solid #34fff0";
+	  const textLabelQr = document.querySelector(".label-qr");
+	  textLabelQr.innerText = defaultQr;
 	  }, 3000);
 	  });
 	  return;
 	}
 	
 	qrcode.makeCode(elText.value);
+    SwitchColorDarkQr();
 }
 
 MakeCode();
@@ -42,25 +47,137 @@ $("#textOrUrl").
 		}
 	});
 	
+	// switch qr dark color
+// switch qr dark color
+function SwitchColorDarkQr() {
+  const iptColorQr = document.getElementById('valueQrColor').value;
+
+  // Hapus QR code yang sudah ada
+  document.getElementById("qrcode").innerHTML = "";
+
+  // Buat QR code baru dengan warna yang diubah
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 145,
+	height : 145,
+  colorDark: iptColorQr
+  });
+
+  // Tampilkan QR code baru 
+  qrcode.makeCode(document.getElementById("textOrUrl").value);
+  const labelQrAppen = document.createElement('label');
+  labelQrAppen.className = "label-qr text-center";
+  document.getElementById("qrcode").appendChild(labelQrAppen);
+  GoLabel();
+}
+
+	
+	
 	// validasi default qr
 	function GoLabel() {
+	  // min teks 27 teks!
+  const iptColorQr = document.getElementById('valueQrColor').value;
 	  const iptText = document.getElementById("textOrUrl").value;
 	  const textLabelQr = document.querySelector(".label-qr");
 	  textLabelQr.innerText = iptText;
 	  
 	  if (!iptText) {
+  document.getElementById("qrcode").innerHTML = "";
+	    var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 145,
+	height : 145,
+  colorDark: iptColorQr
+  });
 	qrcode.makeCode(defaultQr);
-	    textLabelQr.innerText = "https://zeru.netlify.app";
+  const labelQrAppen = document.createElement('label');
+  labelQrAppen.className = "label-qr text-center";
+  labelQrAppen.innerText = defaultQr;
+  document.getElementById("qrcode").appendChild(labelQrAppen);
+	  } else if (iptText.length > 23) {
+	    textLabelQr.innerText = iptText.slice(0, 23) + "...";
 	  }
 	}
 	
 	// reset btn form 
 	function ResetForm() {
 	  const iptText = document.getElementById("textOrUrl").value;
-	  const textLabelQr = document.querySelector(".label-qr");
-	    textLabelQr.innerText = "https://zeru.netlify.app";
+	  const iptOpacity = document.getElementById('rangeOpacity');
+	  const textLabelQr = document.querySelector(".label-qr");  document.getElementById("qrcode").innerHTML = "";
+	    var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 145,
+	height : 145,
+  colorDark: "black"
+  });
 	qrcode.makeCode(defaultQr);
+  const labelQrAppen = document.createElement('label');
+  labelQrAppen.className = "label-qr text-center";
+  labelQrAppen.innerText = defaultQr;
+  document.getElementById("qrcode").appendChild(labelQrAppen);
+	   iptOpacity.value = 10;
 	}
+	
+	// color change border
+	function CekValueBorder() {
+    const qr = document.querySelector(".qr-img");
+	  const inputColor = document.getElementById('colorBorderQr');
+	  qr.style.border = "3px solid" + inputColor.value;
+	}
+	function CekValueColorShadow() {
+    const qr = document.querySelector(".qr-img");
+	  const inputColor = document.getElementById('colorShadowQr');
+	  qr.style.boxShadow = "0 0 5px" + inputColor.value;
+	}
+	
+	// opacity change
+function OpacityChange() {
+    const qr = document.querySelector(".qr-img");
+    const labelOpacity = document.querySelector(".label-input-opacity");
+  const iptOpacity = document.getElementById('rangeOpacity');
+  
+  if (parseInt(iptOpacity.value) === 0) {
+  qr.style.opacity = "0";
+  labelOpacity.innerText = "0";
+  }
+  else if (parseInt(iptOpacity.value) === 1) {
+  qr.style.opacity = ".1";
+  labelOpacity.innerText = "0.1";
+  }
+  else if (parseInt(iptOpacity.value) === 2) {
+  qr.style.opacity = ".2";
+  labelOpacity.innerText = "0.2";
+  }
+  else if (parseInt(iptOpacity.value) === 3) {
+  qr.style.opacity = ".3";
+  labelOpacity.innerText = "0.3";
+  }
+  else if (parseInt(iptOpacity.value) === 4) {
+  qr.style.opacity = ".4";
+  labelOpacity.innerText = "0.4";
+  }
+  else if (parseInt(iptOpacity.value) === 5) {
+  qr.style.opacity = ".5";
+  labelOpacity.innerText = "0.5";
+  }
+  else if (parseInt(iptOpacity.value) === 6) {
+  qr.style.opacity = ".6";
+  labelOpacity.innerText = "0.6";
+  }
+  else if (parseInt(iptOpacity.value) === 7) {
+  qr.style.opacity = ".7";
+  labelOpacity.innerText = "0.7";
+  }
+  else if (parseInt(iptOpacity.value) === 8) {
+  labelOpacity.innerText = "0.8";
+  qr.style.opacity = ".8";
+  }
+  else if (parseInt(iptOpacity.value) === 9) {
+  qr.style.opacity = ".9";
+  labelOpacity.innerText = "0.9";
+  }
+  else if (parseInt(iptOpacity.value) === 10) {
+  qr.style.opacity = "1";
+  labelOpacity.innerText = "1.0";
+  }
+}	
 	
 	
 	// download system

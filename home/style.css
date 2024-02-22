@@ -2,10 +2,9 @@
 
 body {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  padding-top: 20%;
   width: 100%;
-  height: 100vh;
   font-family: "Poppins", Sans-Serif;
 }
 ::selection {
@@ -20,6 +19,10 @@ body {
   background: rgba(30,175,238,0.3);
   backdrop-filter: blur(2px);
   z-index: 9999;
+}
+.img-nav {
+  width: 30px;
+  margin-inline: 5px;
 }
 #root {
 }
@@ -57,6 +60,17 @@ form {
   border: 3px solid #ff3434;
   }
 }
+.con-style {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: auto;
+  gap: 10px;
+}
+.con-style-input {
+  width: 100%;
+  flex-basis: 1;
+}
 .input-text {
   padding-block: 10px;
   padding-inline: 5px;
@@ -66,11 +80,33 @@ form {
   color: #fff;
   margin: 0;
 }
+.input-style-qr {
+  padding-block: 10px;
+  padding-inline: 5px;
+  border-radius: 3px;
+  background: transparent;
+  border: 2px solid #34fff0;
+  color: #fff;
+  width: 100%;
+  margin: 0;
+}
+#colorBorderQr, #colorShadowQr {
+  height: 43px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#rangeOpacity {
+  background: white;
+  color: black;
+  accent-color: #34fff0;
+}
 .input-text::placeholder {
   font-size: 1em;
 }
 .label-input {
   margin: 0;
+  white-space: nowrap;
 }
 .con-btn {
   gap: 10px;
