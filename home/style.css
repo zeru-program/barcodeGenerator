@@ -1,15 +1,116 @@
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  font-family: "Poppins", Sans-Serif;
+}
+::selection {
+  color: white;
+  background: black;
+}
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  background: rgba(30,175,238,0.3);
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+}
+#root {
 }
 form {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   text-align: left;
+  height: auto;
+  margin: 10px;
+  margin-top: 10%;
+  gap: 7px;
+}
+
+.qr-img {
+  width: 150px;
+  height: 170px;
+  position: relative;
+  background: #fff;
+  border: 3px solid red;
+  overflow: hidden;
+  box-shadow: 0 0 5px red;
+  animation: borderRgb 2.5s ease infinite alternate;
+}
+@keyframes borderRgb {
+  0% {
+  border: 3px solid #bed946;
+  }
+  40% {
+  border: 3px solid #46d9cc;
+  }
+  60% {
+  border: 3px solid #d94668;
+  }
+  80% {
+  border: 3px solid #ff3434;
+  }
+}
+.input-text {
+  padding-block: 10px;
+  padding-inline: 5px;
+  border-radius: 3px;
+  background: transparent;
+  border: 2px solid #34fff0;
+  color: #fff;
+  margin: 0;
+}
+.input-text::placeholder {
+  font-size: 1em;
+}
+.label-input {
+  margin: 0;
+}
+.con-btn {
+  gap: 10px;
+}
+.btn-submit:active {
+  transform: scale(.9);
+}
+.btn-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding-block: 5px;
+  user-select: none;
+  transition: all .4s ease;
+}
+.con-labelqr {
+  width: 100%;
+}
+.label-qr {
+  font-family: "Poppins", Sans-Serif;
+  font-weight: 600;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  font-size: .7em;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  color: rgb(87,87,87);
+}
+.label-empty {
+  font-size: .7em;
+  display: flex;
+  opacity: 0;
+  margin: 0;
+}
+.label-title {
+  border-bottom: 1px solid white;
 }
