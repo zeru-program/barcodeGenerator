@@ -15,13 +15,13 @@
 <script src="https://cdn.rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 </head>
 <body class="bg-dark text-light">
-  <nav class="navbar w-100 bg-black position-fixed">
-    <div>
+  <nav class="navbar w-100 position-fixed">
+    <div id="qrTitleNav">
       Qr Generator
     </div>
     <div>
-      <img src="github.png" class="img-nav" onclick="window.location.href = 'https://github.com/zeru-program/barcodeGenerator/'" alt="" />
-      <img src="dark.png" class="img-nav" alt="" />
+      <img src="github.png" class="img-nav" onclick="window.location.href = 'https://github.com/zeru-program/barcodeGenerator/'" alt="githubRepoZp" />
+      <img src="dark.png" class="img-nav" alt="mode" id="modeImg" onclick="changeTheme()" />
     </div>
     
   </nav>
@@ -32,7 +32,7 @@
       </div>
     </div>
     <div>
-      <button type="button" class="btn-primary mt-3 border-0" onclick="downloadQr()">Download QR</button>
+      <button type="button" class="btn-primary mt-3 btn-download border-0" onclick="downloadQr()">Download QR</button>
     </div>
   </div>
   <div id="root"></div>

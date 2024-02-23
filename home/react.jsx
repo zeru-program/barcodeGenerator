@@ -33,9 +33,8 @@ function FormInput() {
           <label className="label-input text-danger label-empty">can not be empty!</label>
         </div>
         <div className="d-flex flex-column">
-          <label className="label-input">Name QR (for download)</label>
+          <label className="label-input">Name QR (for download & optional)</label>
           <input className="input-text" id="inputFile" type="text" placeHolder="type in here.." />
-          <label className="label-input text-danger label-empty">can not be empty!</label>
         </div>
         <div className="d-flex flex-column">
           <label className="label-input">Opacity QR</label>
@@ -53,12 +52,10 @@ function FormInput() {
                 Off
               </option>
             </select>
-            <label className="label-input text-danger label-empty">can not be empty!</label>
           </div>
           <div className="con-style-input d-flex flex-column">
             <label className="label-input">Color border (if animtion off)</label>
             <input className="input-style-qr" id="colorBorderQr" type="color" onChange={CekValueBorder} />
-            <label className="label-input text-danger label-empty">can not be empty!</label>
           </div>
           </div>
           <div className="con-style">  <div className="con-style-input d-flex flex-column">
@@ -101,11 +98,22 @@ function FormInput() {
     </>
   );
 }
-
+function Footer() {
+  return (
+    <>
+    <footer className="d-flex align-items-center justify-content-center position-relative">
+    <label className="cpright">
+    ©2024 zeru || created with react js, bootstrap, javascript
+    </label>
+    </footer>
+    </>
+    )
+}
 function HomePage() {
   return (
     <>
       <FormInput />
+      <Footer />
     </>
   );
 }

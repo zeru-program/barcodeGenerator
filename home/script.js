@@ -179,6 +179,66 @@ function OpacityChange() {
   }
 }	
 	
+// tema change 
+const modeTh = document.getElementById('');
+modeTh.onclick = function() {
+  console.log('mode')
+  changeTheme();
+}
+
+
+// 0 = dark mode , 1 = light mode
+  var mode = false;
+function changeTheme() {
+  const body = document.querySelector('body');
+  const navbar = document.querySelector('.navbar');
+  const modeImg = document.getElementById('modeImg');
+  const qrTitleNav = document.getElementById("qrTitleNav");
+  const temaInput1 = document.querySelectorAll('.input-text');
+  const temaInput2 = document.querySelectorAll('.input-style-qr');
+  const labelTitleData = document.querySelector(".label-title");
+  const range = document.getElementById('rangeOpacity');
+  if (!mode) {
+    // mode light or terang
+    modeImg.src = "light.png";
+    qrTitleNav.style.color = "black";
+    body.classList.remove("bg-dark");
+    body.classList.remove("text-light");
+    body.classList.add("bg-light");
+    body.classList.add("text-dark");
+    navbar.style.background = " rgba(40,102,255,0.686)";
+    labelTitleData.style.borderBottom = "1px solid black";
+    range.style.accentColor = "#2866ff";
+    temaInput1.forEach(tI1n => {
+    tI1n.style.color = "black";
+    tI1n.style.border = "2px solid #2866ff";
+    });
+    temaInput2.forEach(tI2n => {
+    tI2n.style.color = "black";
+    tI2n.style.border = "2px solid #2866ff";
+    });
+  } else {
+    // mode dark or gelap
+    modeImg.src = "dark.png";
+    qrTitleNav.style.color = "white";
+    body.classList.add("bg-dark");
+    body.classList.add("text-light");
+    body.classList.remove("bg-light");
+    body.classList.remove("text-dark");
+    navbar.style.background = " rgba(30,175,238,0.3)";
+    labelTitleData.style.borderBottom = "1px solid white";
+    range.style.accentColor = "#34fff0";
+    temaInput1.forEach(tI1d => {
+    tI1d.style.color = "white";
+    tI1d.style.border = "2px solid #34fff0";
+    });
+    temaInput2.forEach(tI2d => {
+    tI2d.style.color = "white";
+    tI2d.style.border = "2px solid #34fff0";
+    });
+  }
+  mode = !mode;
+}
 	
 	// download system
 function downloadQr() {

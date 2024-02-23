@@ -1,38 +1,11 @@
 @media screen and (max-width: 368px) {
-  .title {
-    font-size: 2em;
-    padding-inline: 20px;
-  }
-  .label-cp {
-    font-size: .7em;
-  }
 }
 @media screen and (min-width: 368px) {
-  .title {
-    font-size: 3em;
-    padding-inline: 20px;
-  }
-  .label-cp {
-    font-size: .8em;
-  }
   
 }
 @media screen and (min-width: 768px) {
-  .title {
-    font-size: 4em;
-    padding-left: 20%;
-    padding-right: 20%;
-  }
-  .label-cp {
-    font-size: .8em;
-  }
-  .con-pmg-atas {
-    height: 23vh;
-    top: -20%;
-  }
-  .con-pmg {
-    height: 30vh;
-    bottom: -20%;
+  body {
+    padding-top: 5%;
   }
   
 }

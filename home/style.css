@@ -150,3 +150,17 @@ form {
 .label-title {
   border-bottom: 1px solid white;
 }
+.btn-download {
+  user-select: none;
+}
+footer {
+  width: 100%;
+  height: 20vh;
+  background: transparent;
+}
+.cpright {
+  position: absolute;
+  bottom: 0;
+  color: #606060;
+  font-size: .8em;
+}
