@@ -1,7 +1,7 @@
 # Barcode generator
 
 ## Description
- this application for... (description)
+Ini adalah website membuat qr atau barcode dengan text atau url yang diberikan, kamu bisa custom style qr mu dengan dari border, background, dan lainnya.
 
 
 ## Features
